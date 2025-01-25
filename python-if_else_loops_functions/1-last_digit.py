@@ -8,10 +8,10 @@ less_than = "and is less than 6 and not 0"
 
 if number >= 0:
     if (number % 10) == 0:
-        print("Last digit of "f"{number} is "f"{number % 10} and is 0")
+        print(""f"{str} "f"{number} is "f"{number % 10} and is 0 ")
     elif (number % 10) < 6:
-        print("Last digit of "f"{number} is "f"{number % 10} "f"{less_than}")
+        print(""f"{str} "f"{number} is "f"{number % 10} "f"{less_than}")
     else:
-        print("Last digit of "f"{number} is "f"{number % 10} "f"{greater_than}")
+        print(""f"{str} "f"{number} is "f"{number % 10} "f"{greater_than}")
 else:
-    print("Last digit of "f"{number} is "f"-{(number * -1) % 10} "f"{less_than}")
+    print(""f"{str} "f"{number} is "f"-{(number * -1) % 10} "f"{less_than}")
