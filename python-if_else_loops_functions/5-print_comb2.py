@@ -6,4 +6,9 @@
 # You can only use no more than 2 print functions with string format
 # You can only use one loop in your code
 
-print(", ".join("{:02}".format(number) for number in range(100)))
+# print(", ".join("{:02}".format(number) for number in range(100)))
+for number in range(0, 100):
+    if number < 99:
+        print("{:02}, ".format(number), end="")
+    else:
+        print("{:02}".format(number))
