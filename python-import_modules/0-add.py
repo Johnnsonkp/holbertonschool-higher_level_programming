@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # 0_add.py
 # imports the function def add(a, b)
-# from add_0.py
 
 if __name__ == "__main__":
     from add_0 import add
