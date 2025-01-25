@@ -8,7 +8,6 @@
 # print(", ".join("{:02}".format(number) for number in range(100)))
 
 for number in range(0, 100):
-    if number < 99:
+    if number < 100:
         print("{:02}, ".format(number), end="")
-    else:
-        print("{:02}".format(number))
+
