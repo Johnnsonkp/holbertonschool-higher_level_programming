@@ -11,4 +11,4 @@ def common_elements(set_1, set_2):
             if i == x:
                 new_set.add(i)
 
-    print("{}".format(new_set))
+    return new_set
