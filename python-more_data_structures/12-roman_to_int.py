@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Technical interview preparation:
 
 # You are not allowed to google anything
