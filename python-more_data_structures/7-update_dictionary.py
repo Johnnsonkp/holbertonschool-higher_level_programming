@@ -8,7 +8,7 @@
 
 
 def update_dictionary(a_dictionary, key, value):
-    if len(a_dictionary) > 0:
+    if (len(a_dictionary) > 0 or len(key) > 0):
         a_dictionary[key] = value
 
     return a_dictionary
