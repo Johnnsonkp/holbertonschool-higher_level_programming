@@ -7,7 +7,6 @@
 # Otherwise, returns False
 # You have to use try: / except:
 # You have to use "{:d}".format() to print as integer
-# You are not allowed to use type()
 
 
 def safe_print_integer(value):
