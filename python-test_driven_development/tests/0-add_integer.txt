@@ -11,11 +11,10 @@ Importing the module
 ====================
     >>> add_integer = __import__("0-add_integer").add_integer
 
-
 Checking module Docstring
 =========================
     >>> d = __import__("0-add_integer").__doc__
-    >>> len(d) > 1
+    >>> d is not None and len(d.strip()) > 0
     True
 
 Numbers (Int)
