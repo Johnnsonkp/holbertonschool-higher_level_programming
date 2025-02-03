@@ -1,0 +1,60 @@
+# 2-matrix_divided.txt
+
+==============================
+How to Use 2-matrix_divided.py
+===============================
+
+This module defines ``2-matrix_divided.py``.
+
+Importing the module
+====================
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> d = __import__('2-matrix_divided').__doc__
+
+Checking module Docstring
+=========================
+   >>> d = __import__('2-matrix_divided').__doc__ 
+   >>> d is not None and len(d.strip()) > 0
+   True
+
+Testing the additional Two integers or floats a and b
+======================================================
+``matrix_divided(...)`` returns a new matrix that is a copy of the parameter
+``matrix`` with all elements divided by ``div``.
+
+  ::
+      >>> matrix = [[1, 2, 3],[4, 5, 6]]
+      >>> div = 3
+      >>> matrix_divided(matrix, div)
+      [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Testing div in not a float or a int
+====================================
+  Raise an TypeError if div not a int or float.
+
+  ::
+    >>> matrix_divided([[1, 2, 3],[4, 5, 6]], "string")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+  
+  Raise an TypeError if div in equal to 0.
+
+  ::
+    >>> matrix_divided([[1, 2, 3],[4, 5, 6]], 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+  
+  Raise an TypeError if no matrix is present
+
+  ::
+    >>> matrix_divided((1,2,3), 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+  
+  Raise a TypeError if rows in the matrix have different size
+
+  ::
+    >>> matrix_divided([[1, 2, 3],[4, 5, 6, 4]], 2)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
