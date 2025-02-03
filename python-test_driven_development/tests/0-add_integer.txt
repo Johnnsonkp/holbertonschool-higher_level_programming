@@ -6,15 +6,26 @@ How to Use 0-add_integer.py
 
 This module defines an integer addition function ``add_integer(a, b=98)``.
 
+
+Importing the module
+====================
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+
+Checking module Docstring
+=========================
+    >>> d = __import__("0-add_integer").__doc__
+    >>> len(d) > 1
+    True
+
 Numbers (Int)
 ============
 
-``add_integer(...)``` returns the addition of two arguments. For numbers,
+``add_integer()``` returns the addition of two arguments. For numbers,
 that value is equivalent to using the ``+`` operator.
 
 ::
 
-    >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(1, 2)
     3
 
@@ -104,3 +115,8 @@ The function will fail if infinity is provided.
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
 
+::
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
