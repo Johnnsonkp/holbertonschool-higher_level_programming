@@ -41,7 +41,8 @@ def matrix_divided(matrix, div):
             for ele in [num for row in matrix for num in row]
         )
     ):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
     else:
         l = len(matrix[0])
         if not all((len(x) == l) for x in matrix):
