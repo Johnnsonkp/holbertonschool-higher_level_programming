@@ -37,6 +37,18 @@ Testing divider is infinite
     >>> matrix_divided(matrix, float('inf'))
     [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
+Testing returns a new matrix 
+====================================
+  should return a new matrix, with the old matrix unchanged
+
+  :;
+    >>> matrix = [[1, 2, 3],[4, 5, 6]]
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+    >>> print(matrix)
+    [[1, 2, 3], [4, 5, 6]]
+
 Testing div in not a float or a int
 ====================================
   Raise an TypeError if div not a int or float.
