@@ -28,6 +28,8 @@ def matrix_divided(matrix, div):
 
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
+    if div == float("inf"):
+        return [[0.0 for _ in row] for row in matrix]
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if (
