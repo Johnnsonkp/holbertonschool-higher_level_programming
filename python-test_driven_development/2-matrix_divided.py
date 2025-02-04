@@ -31,13 +31,17 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if (
-        type(matrix) is not list
-        or not all((type(l) is list) for l in matrix)
-        or not all((isinstance(n, (int, float)) for n in l) for l in matrix)
-        or len(matrix[0]) == 0
+        not isinstance(matrix, list)
+        or matrix == []
+        or not all(isinstance(row, list) for row in matrix)
+        or not all(
+            (isinstance(ele, int) or isinstance(ele, float))
+            for ele in [num for row in matrix for num in row]
+        )
     ):
-        raise TypeError("matrix must be a matrix " "(list of lists) of integers/floats")
-    l = len(matrix[0])
-    if not all((len(x) == l) for x in matrix):
-        raise TypeError("Each row of the matrix must have the same size")
-    return [list(map(lambda x: round(x / div, 2), r)) for r in matrix]
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    else:
+        l = len(matrix[0])
+        if not all((len(x) == l) for x in matrix):
+            raise TypeError("Each row of the matrix must have the same size")
+        return [list(map(lambda x: round(x / div, 2), r)) for r in matrix]
