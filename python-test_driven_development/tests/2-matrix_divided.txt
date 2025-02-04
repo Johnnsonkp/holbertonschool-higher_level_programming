@@ -79,3 +79,18 @@ Testing div in not a float or a int
     Traceback (most recent call last):
     TypeError: Each row of the matrix must have the same size
 
+   Raise an TypeError if no matrix is empty []
+
+  ::
+    >>> matrix = []
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    Raise an TypeError if function call only has one arg present
+
+  ::
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
