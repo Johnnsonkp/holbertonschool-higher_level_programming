@@ -28,6 +28,15 @@ Testing the additional Two integers or floats a and b
       >>> matrix_divided(matrix, div)
       [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
+Testing divider is infinite 
+====================================
+  If div is infinity, all values are set to 0.0.
+
+  :;
+    >>> matrix = [[1, 2, 3],[4, 5, 6]]
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
 Testing div in not a float or a int
 ====================================
   Raise an TypeError if div not a int or float.
