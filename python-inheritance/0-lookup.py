@@ -10,5 +10,5 @@
 
 def lookup(obj):
     """returns a list of available attributes and methods of an object"""
-    if isinstance(obj, int) != True:
+    if isinstance(obj, int) is not True:
         return dir(obj)
