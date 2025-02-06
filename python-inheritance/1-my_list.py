@@ -2,6 +2,7 @@
 # def print_sorted(self):
 
 """
+class MyList(list):
 def print_sorted(self):
 """
 
