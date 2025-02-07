@@ -16,9 +16,10 @@ class MyList(list):
 
         for i in range(len(new_arr)):
             for x in range(len(new_arr)):
-                if type(new_arr[i]) != type(new_arr[x]):
+                if not isinstance(new_arr[i], type(new_arr[x])):
                     raise TypeError(
-                        "'<' not supported between instances of '{}' and '{}'".format(
+                        "'<' not supported between"
+                        "instances of '{}' and '{}'".format(
                             type(new_arr[i]).__name__, type(new_arr[x]).__name__
                         )
                     )
