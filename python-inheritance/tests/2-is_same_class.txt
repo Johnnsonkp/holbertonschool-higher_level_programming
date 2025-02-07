@@ -1,0 +1,13 @@
+# 2-is_same_class.txt
+
+=======================
+How to Use 2-is_same_class.py
+=======================
+
+This module defines a class ``is_same_class``.
+
+Instantiation
+=============
+
+``is_same_class`` can be instantiated with no arguments, which will return
+an empty list:
