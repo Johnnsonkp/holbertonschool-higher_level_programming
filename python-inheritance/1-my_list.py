@@ -20,7 +20,8 @@ class MyList(list):
                     raise TypeError(
                         "'<' not supported between "
                         "instances of '{}' and '{}'".format(
-                            type(new_arr[i]).__name__, type(new_arr[x]).__name__
+                            type(new_arr[i]).__name__,
+                            type(new_arr[x]).__name__
                         )
                     )
 
