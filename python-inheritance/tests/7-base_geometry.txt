@@ -99,9 +99,60 @@ Returns nothing if ``integer_validator()`` method is called with a positive valu
 
 ::
 
+Raises a TypeError if ``integer_validator()`` method is called with a string as the value
 
+::
+    >>> name = "age"
+    >>> value = "4"
+    >>> BaseGeometry().integer_validator(name, value)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
 
-Test present: integer_validator(“age”, -4)
+Raises a TypeError if ``integer_validator()`` method is called with a value that isn't an integer
+
+::
+    >>> name = "age"
+    >>> value = (4,)
+    >>> BaseGeometry().integer_validator(name, value)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Raises a TypeError if ``integer_validator()`` method is called with a value that isn't an integer
+
+::
+    >>> name = "age"
+    >>> value = [3]
+    >>> BaseGeometry().integer_validator(name, value)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Raises a TypeError if ``integer_validator()`` method is called with a value that isn't an integer
+
+::
+    >>> name = "age"
+    >>> value = True
+    >>> BaseGeometry().integer_validator(name, value)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Raises a TypeError if ``integer_validator()`` method is called with a value that isn't an integer
+
+::
+    >>> name = "age"
+    >>> value = {3, 4}
+    >>> BaseGeometry().integer_validator(name, value)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+Raises a TypeError if ``integer_validator()`` method is called with a value that isn't an integer
+
+::
+    >>> name = "age"
+    >>> value = None
+    >>> BaseGeometry().integer_validator(name, value)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
 
 Test present: integer_validator(“age”, “4”)
 
