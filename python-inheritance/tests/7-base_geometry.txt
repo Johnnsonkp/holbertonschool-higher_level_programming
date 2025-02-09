@@ -152,16 +152,3 @@ Raises a TypeError if ``integer_validator()`` method is called with a value that
     >>> BaseGeometry().integer_validator(name, value)
     Traceback (most recent call last):
     TypeError: age must be an integer
-
-
-Test present: integer_validator(“age”, “4”)
-
-Test present: integer_validator(“age”, (4,))
-
-Test present: integer_validator(“age”, [3])
-
-Test present: integer_validator(“age”, True)
-
-Test present: integer_validator(“age”, {3, 4})
-
-Test present: integer_validator(“age”, None)
