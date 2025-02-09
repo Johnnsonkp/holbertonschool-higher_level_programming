@@ -1,0 +1,87 @@
+# 7-base_geometry.txt
+
+===============================================
+How to Use 7-base_geometry.py
+===============================================
+
+This module defines ``integer_validator()`` method which is within the ``BaseGeometry``
+class
+
+Test present: check instantiation
+===============================================
+``BaseGeometry`` can be istatiated with no arguements:
+
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> type(BaseGeometry())
+    <class '7-base_geometry.BaseGeometry'>
+
+    >>> bg = BaseGeometry().integer_validator
+    >>> type(bg)
+    <class 'method'>
+
+::
+
+Test present: area()
+===============================================
+
+Raises an Exception when the ``area()`` is called with the message "area() is not implemented"
+
+::
+
+    >>> BaseGeometry().area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+::
+
+Test present: integer_validator()
+===============================================
+
+Raises a TypeError if ``integer_validator()`` method is called without any arguments
+
+::
+
+    >>> BaseGeometry().integer_validator()
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Raises a TypeError if ``integer_validator()`` method is called with only 1 arguement
+
+::
+
+    >>> BaseGeometry().integer_validator("age")
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+Returns nothing if value is greater than 1 and name argument isn't empty
+
+::
+    >>> name = "age"
+    >>> BaseGeometry().integer_validator(name, 1)
+
+Returns nothing if value is greater than 1 and name argument isn't empty
+
+::
+    >>> name = "age"
+    >>> BaseGeometry().integer_validator(name, 0)
+    ValueError: {} must be greater than 0
+
+
+
+Test present: integer_validator(“age”, 0)
+
+Test present: integer_validator(“age”, -4)
+
+Test present: integer_validator(“age”, “4”)
+
+Test present: integer_validator(“age”, (4,))
+
+Test present: integer_validator(“age”, [3])
+
+Test present: integer_validator(“age”, True)
+
+Test present: integer_validator(“age”, {3, 4})
+
+Test present: integer_validator(“age”, None)
