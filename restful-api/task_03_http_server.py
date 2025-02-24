@@ -41,8 +41,9 @@ class MyHTTPHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(response).encode("utf-8"))
 
         else:
-            self.send_error(404, message="Endpoint not found")
+            self.send_response(404)
             self.end_headers()
+            self.wfile.write(b"Endpoint not found")
 
 
 server = HTTPServer((HOST, PORT), MyHTTPHandler)
