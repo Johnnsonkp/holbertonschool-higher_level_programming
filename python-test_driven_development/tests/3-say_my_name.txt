@@ -82,3 +82,21 @@ only the last_name is provided
     >>> last_name = "Smith"
     >>> say_my_name(first_name, last_name)
     My name is  Smith
+
+::
+
+Raise a TypeError when no inputs are passed into the function
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+::
+
+Raise a TypeError when more than 2 inputs are passed into the function
+
+    >>> say_my_name("A", "B", "C")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+::
