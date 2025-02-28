@@ -11,10 +11,6 @@
 
 def say_my_name(first_name, last_name=""):
     """say_my_name func that prints My name is <first name> <last name>"""
-    if(first_name == ""):
-        raise TypeError("first_name must be present")
-    if(last_name == ""):
-        raise TypeError("last_name must be present")
     if (isinstance(first_name, str) == False):
         raise TypeError("first_name must be a string")
     if (isinstance(last_name, str) == False):

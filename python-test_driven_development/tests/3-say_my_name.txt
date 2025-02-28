@@ -56,29 +56,3 @@ Raise a TypeError if last_name input is not a string
     >>> say_my_name(first_name, last_name)
     Traceback (most recent call last):
     TypeError: last_name must be a string
-
-::
-
-Testing when first_name or last_name inputs are empty
-=============================================================
-Raise a TypeError if first_name input is left empty
-
-::
-
-    >>> first_name = ""
-    >>> last_name = "Smith"
-    >>> say_my_name(first_name, last_name)
-    Traceback (most recent call last):
-    TypeError: first_name must be present
-
-::
-
-Raise a TypeError if last_name input is not a string
-
-::
-
-    >>> first_name = "John"
-    >>> last_name = ""
-    >>> say_my_name(first_name, last_name)
-    Traceback (most recent call last):
-    TypeError: last_name must be present
