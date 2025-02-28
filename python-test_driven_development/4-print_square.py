@@ -13,6 +13,7 @@ raise TypeError is size is a float and less than 0
 
 
 def print_square(size):
+    """a function that prints a square with the character #"""
     if (isinstance(size, int) is False):
         raise TypeError("size must be an integer")
     if (size < 0):
