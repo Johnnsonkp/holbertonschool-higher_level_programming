@@ -56,3 +56,29 @@ Raise a TypeError if last_name input is not a string
     >>> say_my_name(first_name, last_name)
     Traceback (most recent call last):
     TypeError: last_name must be a string
+
+::
+
+Testing when only one of first_name or last_name input is provided
+====================================================================
+``say_my_name(..)`` function returns only the first_name when 
+only the first_name is provided
+
+::
+
+    >>> first_name = "John"
+    >>> last_name = ""
+    >>> say_my_name(first_name, last_name)
+    My name is John 
+
+::
+
+``say_my_name(..)`` function returns only the last_name when 
+only the last_name is provided
+
+::
+
+    >>> first_name = ""
+    >>> last_name = "Smith"
+    >>> say_my_name(first_name, last_name)
+    My name is  Smith
