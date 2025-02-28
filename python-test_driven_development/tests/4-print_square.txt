@@ -1,0 +1,67 @@
+# 4-print_square.txt 
+
+==============================
+How to Use 4-print_square.py
+===============================
+
+This module defines ``4-print_square.py``.
+
+Importing the module 
+=====================
+    >>> print_square = __import__('4-print_square').print_square
+    >>> d = __import__('4-print_square').__doc__ 
+
+Checking module doctring
+==========================
+  ::
+    >>> d = __import__('4-print_square').__doc__
+    >>> len(d) > 0
+    True
+
+  ::
+
+Checking that size is an integer
+================================
+  Raise an exception if size is type string
+
+  ::
+    >>> size = "hello"
+    >>> print_square(size)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+  
+  Raise an exception if size is type float
+
+  ::
+    >>> size = 0.2
+    >>> print_square(size)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+  
+Checking that size greater than or equal to 0
+=================================================
+  Raise an exception if size is less than 0
+
+  ::
+    >>> size = -1
+    >>> print_square(size)
+    Traceback (most recent call last):
+    TypeError: size must be >= 0
+
+Checking that ``print_square(...)`` only takes one arguments
+=================================================
+  Raise an exception if two or more arguments are passed into ``print_square(...)``
+
+  ::
+    >>> size = 1
+    >>> size_2 = 5
+    >>> print_square(size, size_2)
+    Traceback (most recent call last):
+    TypeError: print_square() takes 1 positional argument but 2 were given
+
+  Raise an exception if no arguments are passed into ``print_square(...)``
+
+  ::
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
