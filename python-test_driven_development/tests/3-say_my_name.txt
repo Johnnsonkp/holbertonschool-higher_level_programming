@@ -1,0 +1,84 @@
+# 3-say_my_name.txt
+
+==============================
+How to Use 3-say_my_name.py
+===============================
+
+This module defines ``3-say_my_name.py``.
+
+Importing the module
+====================
+  >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Checking module Docstring
+==========================
+::
+
+    >>> d = __import__('3-say_my_name').__doc__
+    >>> len(d) > 0
+    True
+
+::
+
+Testing when first_name and last_name inputs are strings
+========================================================
+``say_my_name(...)`` prints "My name is <first_name> <last_name>" when
+first_name and last_name valuse are strings
+::
+
+    >>> first_name = "John"
+    >>> last_name = "Smith"
+    >>> say_my_name(first_name, last_name)
+    My name is John Smith
+
+::
+
+Testing when first_name or last_name inputs are not a strings
+=============================================================
+Raise a TypeError if first_name input is not a string
+
+::
+
+    >>> first_name = 1
+    >>> last_name = "Smith"
+    >>> say_my_name(first_name, last_name)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+Raise a TypeError if last_name input is not a string
+
+::
+
+    >>> first_name = "John"
+    >>> last_name = False
+    >>> say_my_name(first_name, last_name)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+::
+
+Testing when first_name or last_name inputs are empty
+=============================================================
+Raise a TypeError if first_name input is left empty
+
+::
+
+    >>> first_name = ""
+    >>> last_name = "Smith"
+    >>> say_my_name(first_name, last_name)
+    Traceback (most recent call last):
+    TypeError: first_name must be present
+
+::
+
+Raise a TypeError if last_name input is not a string
+
+::
+
+    >>> first_name = "John"
+    >>> last_name = ""
+    >>> say_my_name(first_name, last_name)
+    Traceback (most recent call last):
+    TypeError: last_name must be present
