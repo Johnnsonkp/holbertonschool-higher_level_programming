@@ -24,11 +24,6 @@ def generate_invitations(template_content, attendees):
 
     def data(guest_d):
         required_keys = ["name", "event_title", "event_date", "event_location"]
-        missing_keys = [key for key in required_keys if key not in guest_d]
-
-        if missing_keys:
-            print(f"Warning: Missing keys in guest data: {missing_keys}")
-            return None
 
         updated_data = {}
         for key in required_keys:
