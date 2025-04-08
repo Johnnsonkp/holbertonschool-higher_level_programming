@@ -30,16 +30,10 @@ def generate_invitations(template_content, attendees):
             print(f"Warning: Missing keys in guest data: {missing_keys}")
             return None
 
-        def is_empty(value):
-            return not value
-
         updated_data = {}
-
-        for k, v in guest_d.items():
-            if is_empty(v) == True:
-                updated_data[k] = "N/A"
-            else:
-                updated_data[k] = v
+        for key in required_keys:
+            value = guest_d.get(key)
+            updated_data[key] = value if value else "N/A"
 
         return updated_data
 
