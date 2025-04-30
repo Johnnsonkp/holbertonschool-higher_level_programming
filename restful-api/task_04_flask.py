@@ -13,11 +13,7 @@ class UserStore:
     return self.user_data
   
   def get_users(self):
-    users = []
-
-    for user_name, info in self.user_data.items():
-        users.append(user_name)
-    return users
+    return list(self.user_data.keys())
   
   def add_user(self, new_user_dets):
     self.user_data[new_user_dets['username']] = new_user_dets
@@ -44,12 +40,13 @@ def add_new_user():
 
 @app.route('/users/<username>', methods=['GET'])
 def show_user_info(username):
-  user_data = user_store.get_user_data()
-  user = user_data[username]
 
   try: 
+    user_data = user_store.get_user_data()
+    user = user_data[username]
+
     return jsonify(user)
-  except KeyError: 
+  except Exception as e:  
     return jsonify({"error": "User not found"}), 404
 
 
@@ -61,7 +58,7 @@ def show_app_status():
 
 @app.route('/data', methods=['GET'])
 def users():
-  return jsonify(user_store.get_users())
+  return jsonify(user_store.get_users()), 200
 
 
 
