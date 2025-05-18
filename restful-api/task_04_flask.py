@@ -1,69 +1,49 @@
+#!/usr/bin/python3
+"""Module containing simple Flask web application"""
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-
-class UserStore:
-  def __init__(self):
-    self.user_data = {
-      "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"}, 
-      "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
-    }
-
-  def get_user_data(self):
-    return self.user_data
-  
-  def get_users(self):
-    return list(self.user_data.keys())
-  
-  def add_user(self, new_user_dets):
-    self.user_data[new_user_dets['username']] = new_user_dets
+users = {}
 
 
-user_store = UserStore()
+@app.route('/')
+def home():
+    return 'Welcome to the Flask API!'
+
+
+@app.route('/data')
+def data():
+    return jsonify(list(users))
+
 
 @app.route('/add_user', methods=['POST'])
-def add_new_user():
-
-  try:
-    new_user_details = request.get_json()
-
-    if 'username' not in new_user_details:
-      return jsonify({"error": "Username is required"}), 400
-    
-    user_store.add_user(new_user_details)
-    return jsonify({"message": "User added", "user": new_user_details}), 201
-
-  except Exception as e: 
-    return jsonify({"error": str(e)}), 500
-  
+def add_user():
+    data = request.json
+    if data is None or data.get('username') is None:
+        return jsonify({'error': 'Username is required'}), 400
+    user = {
+        'username': data.get('username'),
+        'name': data.get('name'),
+        'age': data.get('age'),
+        'city': data.get('city')
+    }
+    users[user.get('username')] = user
+    return jsonify({'message': 'User added', 'user': user}), 201
 
 
-@app.route('/users/<username>', methods=['GET'])
-def show_user_info(username):
-
-  try: 
-    user_data = user_store.get_user_data()
-    user = user_data[username]
-
-    return jsonify(user)
-  except Exception as e:  
-    return jsonify({"error": "User not found"}), 404
+@app.route('/status')
+def status():
+    return 'OK'
 
 
-
-@app.route('/status', methods=['GET'])
-def show_app_status():
-  return "OK", 200
-
-
-@app.route('/data', methods=['GET'])
-def users():
-  return jsonify(user_store.get_users()), 200
+@app.route('/users/<username>')
+def username(username):
+    if username is None:
+        return jsonify({'error': 'Username is required'}), 400
+    if username not in users:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify(users[username])
 
 
-
-@app.route('/', methods=['GET'])
-def home():
-  return "Welcome to the Flask API!"
-
-if __name__ == '__main__': app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
